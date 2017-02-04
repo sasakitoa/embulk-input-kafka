@@ -54,7 +54,7 @@ in:
     - partition
     - offset
   load_from_beginning: true
-  seek
+  seek:
     - { topic: topic1, partition: 2, offset: 20 }
     - { topic: topic1, partition: 3, offset: 25 }
   extra_kafka_options:
