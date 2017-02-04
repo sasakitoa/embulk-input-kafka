@@ -47,7 +47,9 @@ You should specify values of `column` in below table to columns in configuration
 in:
   type: kafka
   broker_list: kafkahost1:9092,kafkahost2:9092,kafkahost3:9092
-  topics: topic1,topic2
+  topics:
+    - topic1
+    - topic2
   columns:
     - key
     - value
