@@ -70,3 +70,10 @@ in:
 ```
 $ ./gradlew gem  # -t to watch change of files and rebuild continuously
 ```
+
+## Install
+
+```
+$ embulk gem install --local pkg/embulk-input-kafka-x.y.z.gem
+```
+(Please replace x.y.z to correct version number)
