@@ -1,6 +1,6 @@
 # Kafka input plugin for Embulk
 
-Kafka input Plugin is plugin for Embulk to load data from Apache Kafka.
+Kafka input Plugin is the plugin for Embulk to load data from Apache Kafka.
 
 ## Overview
 
@@ -16,15 +16,15 @@ Kafka input Plugin is plugin for Embulk to load data from Apache Kafka.
 | Name                | Description                                                                     | Required |  default Value                                           |
 |:--------------------|:--------------------------------------------------------------------------------|:---------|:---------------------------------------------------------|
 | broker_list         | Address to initial connection to Kafka cluster.                                 | yes      | -                                                        |
-| topics              | List of topics to load data. You can specify multi topics to use conma          | yes      | -                                                        |
+| topics              | List of topics to load data. You can specify multi topics to use comma          | yes      | -                                                        |
 | key_deserializer    | A Class to deserialize key of messages                                          | no       | org.apache.kafka.common.serialization.StringDeserializer |
 | value_deserializer  | A Class to deserialize value of messages                                        | no       | org.apache.kafka.common.serialization.StringDeserializer |
-| columns             | Columns to fecth. (See blow setion for details)                                 | no       | [key, value]                                             |
+| columns             | Columns to fetch. (See below section for details)                               | no       | [key, value]                                             |
 | load_from_beginning | If true, load data from beginning of all parititons of subscribing topics.      | no       | load_from_beginning                                      |
 | seek                | If set, set fetch offsets of partitions specified value before loading data.    | no       | -                                                        |
 | extra_kafka_options | Adding properties to KafkaConsumer                                              | no       | -                                                        |
-| num_tasks           | Number of task. if num_task=5, 5 consumer will be created                       | no       | 1                                                        |
-| kafka_group_id      | Identifies the consumer group. If num_task > 1, all consumer use this value     | no       | EmbulkConsumer                                           |
+| num_tasks           | Number of tasks. if num_task=5, 5 consumers will be created                     | no       | 1                                                        |
+| kafka_group_id      | Identifies the consumer group. If num_task > 1, all consumers use this value    | no       | EmbulkConsumer                                           |
 | poll_timeout_sec    | Timeout for KafkaConsumer#poll method                                           | no       | 3                                                        |
 
 ### Columns properties
