@@ -20,7 +20,7 @@ Kafka input Plugin is the plugin for Embulk to load data from Apache Kafka.
 | key_deserializer    | A Class to deserialize key of messages                                          | no       | org.apache.kafka.common.serialization.StringDeserializer |
 | value_deserializer  | A Class to deserialize value of messages                                        | no       | org.apache.kafka.common.serialization.StringDeserializer |
 | columns             | Columns to fetch. (See below section for details)                               | no       | [key, value]                                             |
-| load_from_beginning | If true, load data from beginning of all parititons of subscribing topics.      | no       | load_from_beginning                                      |
+| load_from_beginning | If true, load data from beginning of all parititons of subscribing topics.      | no       | false                                                    |
 | seek                | If set, set fetch offsets of partitions specified value before loading data.    | no       | -                                                        |
 | extra_kafka_options | Adding properties to KafkaConsumer                                              | no       | -                                                        |
 | num_tasks           | Number of tasks. if num_task=5, 5 consumers will be created                     | no       | 1                                                        |
