@@ -43,6 +43,7 @@ public class KafkaInputPlugin implements InputPlugin {
         public Boolean getLoadFromBeginning();
 
         @Config("seek")
+        @ConfigDefault("[]")
         public Optional<List<ToStringMap>> getSeek();
 
         @Config("poll_timeout_sec")
