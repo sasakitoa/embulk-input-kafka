@@ -131,13 +131,14 @@ public class KafkaInputPlugin implements InputPlugin {
     private void setOffsetPosition(KafkaConsumer<?, ?> consumer, PluginTask task) {
         // Set all offset belongs subscribing topics to beginning
         if(task.getLoadFromBeginning()) {
+            consumer.poll(0);
             for(String topic : task.getTopics()) {
                 List<TopicPartition> tpList = new LinkedList<>();
                 for(PartitionInfo info :consumer.partitionsFor(topic)) {
                     tpList.add(new TopicPartition(info.topic(), info.partition()));
+                    logger.debug(String.format("TopicPartition \"%s-%d\" were set offset beginning.", info.topic(), info.partition()));
                 }
                 consumer.seekToBeginning(tpList);
-                logger.debug(String.format("All partition(s) of topic \"%s\" were set offset beginning."));
             }
             logger.info("All partition(s) of subscribing topics were set offset beginning.");
 
