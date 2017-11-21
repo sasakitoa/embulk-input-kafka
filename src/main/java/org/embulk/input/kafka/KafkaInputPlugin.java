@@ -116,6 +116,7 @@ public class KafkaInputPlugin implements InputPlugin {
                 showReadRecords *= 2;
             }
         }
+        builder.finish();
         builder.close();
         logger.info(String.format("Finishing task-%d.Total %d record(s) read in this task", taskIndex, readRecords));
         consumer.close();
